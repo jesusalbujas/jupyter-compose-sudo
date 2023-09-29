@@ -1,0 +1,16 @@
+# Use a image 
+FROM jupyter/minimal-notebook
+
+# Install sudo
+USER root
+RUN apt-get update && apt-get install -y sudo && rm -rf /var/lib/apt/lists/*
+
+# Configure sudo without requiring password for user jovyan
+RUN echo "jovyan ALL=(ALL:ALL) NOPASSWD:ALL" >> /etc/sudoers
+
+# Switch to user jovyan (default user in the minimal Jupyter image)
+USER $NB_UID
+
+# Defines a working directory for the user
+WORKDIR /home/jovyan
+
