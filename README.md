@@ -161,6 +161,7 @@ Sudo is enabled with a custom image in the dockerfile found in `config/`, this i
 1. Build image
 
 ```bash
-docker build -t jupyter-sudo:latest .
+docker build -t jupyter-sudo:latest -f Dockerfile.sudo .
+
 ```
 
