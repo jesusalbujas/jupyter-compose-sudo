@@ -43,7 +43,7 @@ This deployment uses [JupyterHub Native Authenticator](https://native-authentica
    docker-compose build
    ```
 
-## Customisation: Jupyter Notebook Image
+## Customization: Jupyter Notebook Image
 
 You can configure JupyterHub to spawn Notebook servers from any Docker image, as
 long as the image's `ENTRYPOINT` and/or `CMD` starts a single-user instance of
