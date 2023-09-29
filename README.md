@@ -37,7 +37,7 @@ This deployment uses [JupyterHub Native Authenticator](https://native-authentica
 ## Build the JupyterHub Docker image
 
 1. Use [docker-compose](https://docs.docker.com/compose/reference/) to build
-   the JupyterHub Docker image:
+   the JupyterHub Docker image, this image is used by docker compose:
 
    ```bash
    docker-compose build
