@@ -2,12 +2,12 @@
 # Distributed under the terms of the Modified BSD License.
 
 # Configuration file for JupyterHub
+
 import os
 
 c = get_config()  # noqa: F821
 
-import os, nativeauthenticator
-c.JupyterHub.template_paths = [f"{os.path.dirname(nativeauthenticator.__file__)}/templates/"]
+
 #c.Spawner.cmd = ['sudo', '-E', 'start-singleuser.sh']
 
 # Spawn single-user servers as Docker containers
@@ -36,6 +36,11 @@ c.DockerSpawner.volumes = {"jupyterhub-user-{username}": notebook_dir}
 ## Default URL
 
 c.JupyterHub.default_url = "/hub/home"
+
+## Templates
+
+c.JupyterHub.template_paths = ['/srv/jupyterhub/config/login.html']
+c.JupyterHub.template_vars = {'custom_login_template': 'login.html'}
 
 # Remove containers once they are stopped
 c.DockerSpawner.remove = True
