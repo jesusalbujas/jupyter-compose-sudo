@@ -42,6 +42,12 @@ c.JupyterHub.default_url = "/hub/home"
 #c.JupyterHub.template_paths = ['/srv/jupyterhub/config/login.html']
 #c.JupyterHub.template_vars = {'custom_login_template': 'login.html'}
 
+# Fuentes
+
+c.NotebookApp.font_family = 'Arial, sans-serif'
+c.NotebookApp.font_size = 14
+
+
 # Remove containers once they are stopped
 c.DockerSpawner.remove = True
 
