@@ -8,13 +8,13 @@ services:
   hub:
     build:
       context: .
-      dockerfile: Dockerfile.jupyterhub
+      dockerfile: ${DOCKERFILE_NAME}
       args:
         JUPYTERHUB_VERSION: latest
-    restart: always
-    image: jupyterhub
-    container_name: jupyterhub
-    user: root
+    restart: ${GENERIC_RESTART}
+    image: ${IMAGE} # jupyterhub
+    container_name: ${CONTAINER_NAME}
+    user: ${USER}
     networks:
       - jupyterhub-network
     volumes:
@@ -29,13 +29,13 @@ services:
       - "8000:8000"
     environment:
       # This username will be a JupyterHub admin
-      JUPYTERHUB_ADMIN: admin
+      JUPYTERHUB_ADMIN: ${JUPYTERHUB_ADMIN} # admin
       # All containers will join this network
       DOCKER_NETWORK_NAME: jupyterhub-network
       # JupyterHub will spawn this Notebook image for users
-      DOCKER_NOTEBOOK_IMAGE: jupyter-sudo:latest
+      DOCKER_NOTEBOOK_IMAGE: ${DOCKER_NOTEBOOK_IMAGE} # jupyter-sudo:latest
       # Notebook directory inside user image
-      DOCKER_NOTEBOOK_DIR: /home/jovyan/work
+      DOCKER_NOTEBOOK_DIR: ${DOCKER_NOTEBOOK_DIR} 
 
 volumes:
   jupyterhub-data:
