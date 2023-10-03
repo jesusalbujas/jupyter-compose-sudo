@@ -39,8 +39,8 @@ c.JupyterHub.default_url = "/hub/home"
 
 ## Templates
 
-c.JupyterHub.template_paths = ['/srv/jupyterhub/config/login.html']
-c.JupyterHub.template_vars = {'custom_login_template': 'login.html'}
+#c.JupyterHub.template_paths = ['/srv/jupyterhub/config/login.html']
+#c.JupyterHub.template_vars = {'custom_login_template': 'login.html'}
 
 # Remove containers once they are stopped
 c.DockerSpawner.remove = True
