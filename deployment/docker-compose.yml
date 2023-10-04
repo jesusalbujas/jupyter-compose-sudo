@@ -27,7 +27,7 @@ services:
       - "jupyterhub-data:/data"
       - "/deployment/data:/data"
     ports:
-      - "8000:8000"
+      - #"8000:8000"
       - "2023:8000"
     environment:
       # This username will be a JupyterHub admin
