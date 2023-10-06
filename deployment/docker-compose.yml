@@ -15,7 +15,6 @@ services:
     image: jupyterhub
     container_name: jupyterhub
     user: root
-    enable_auth_state: true
     networks:
       - jupyterhub-network
     volumes:
