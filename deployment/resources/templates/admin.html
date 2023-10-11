@@ -10,10 +10,9 @@
 </div>
 {% endblock %}
 
-{% block footer %}
-<div class="container-fluid navbar-default small version_footer">
-  <div class="navbar-text">
-    Jupyterhub {{ server_version }}
-  </div>
-</div>
+<!--Removed footer-->
+
+{% block script %}
+{{ super() }}
+<script type="text/javascript">require(["admin"]);</script>
 {% endblock %}

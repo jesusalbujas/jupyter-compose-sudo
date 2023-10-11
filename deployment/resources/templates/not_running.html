@@ -2,22 +2,22 @@
 
 {% block main %}
 
-<div class="container">
+<div class="container pt-16">
   <div class="row">
     <div class="text-center">
       {% block heading %}
       <h1>
       {% if failed %}
-      Inicio fallido! :(
+      Spawn failed
       {% else %}
-      El servidor no está funcionando!
+      Lab not running
       {% endif %}
       </h1>
       {% endblock %}
       {% block message %}
       <p>
         {% if failed %}
-        The latest attempt to start your server {{ server_name }} has failed.
+        The latest attempt to start your lab {{ server_name }} has failed.
         {% if failed_html_message %}
           </p><p>{{ failed_html_message | safe }}</p><p>
         {% elif failed_message %}
@@ -25,11 +25,11 @@
         {% endif %}
         Would you like to retry starting it?
         {% else %}
-        Your server {{ server_name }} is not running.
+        Your lab {{ server_name }} is not running.
           {% if implicit_spawn_seconds %}
           It will be restarted automatically.
           If you are not redirected in a few seconds,
-          click below to launch your server.
+          click below to launch your lab.
           {% else %}
           Would you like to start it?
           {% endif %}
@@ -39,11 +39,11 @@
       {% block start_button %}
       <a id="start" role="button" class="btn btn-lg btn-primary" href="{{ spawn_url }}">
         {% if failed %}
-        Relanzar
+        Relaunch
         {% else %}
-        Lanzar
+        Launch
         {% endif %}
-        Servidor {{ server_name }}
+        Lab {{ server_name }}
       </a>
       {% endblock %}
     </div>

@@ -5,25 +5,26 @@
 
 {% block main %}
 
+
 <div class="error">
   {% block h1_error %}
-  <h1>
+  <h1 class="center-for-the-best">
     {{status_code}} : {{status_message}}
   </h1>
   {% endblock h1_error %}
   {% block error_detail %}
   {% if message %}
-  <p>
+  <p align="center">
     {{message}}
   </p>
   {% endif %}
   {% if message_html %}
-  <p>
+  <p align="center">
     {{message_html | safe}}
   </p>
   {% endif %}
   {% if extra_error_html %}
-  <p>
+  <p align="center">
     {{extra_error_html | safe}}
   </p>
   {% endif %}

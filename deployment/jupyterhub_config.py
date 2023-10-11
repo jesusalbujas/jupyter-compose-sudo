@@ -39,7 +39,8 @@ c.JupyterHub.default_url = "/hub/home"
 
 ## Templates
 
-#c.JupyterHub.template_paths = ['/srv/jupyterhub/config/login.html']
+c.JupyterHub.template_paths = ['/usr/local/share/jupyterhub/templates']
+c.JupyterHub.template_paths = ['/usr/local/share/jupyterhub/static']
 #c.JupyterHub.template_vars = {'custom_login_template': 'login.html'}
 
 # Fuentes

@@ -1,0 +1,46 @@
+{% extends "page.html" %}
+
+{% block main %}
+<div class="container pt-16">
+    <h1>Área de Autorización</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Usuario</th>
+                {% if ask_email %}<th>Email</th>{% endif %}
+                <th>¿Tiene 2FA?</th>
+                <th>¿Está Autorizado?</th>
+                <th></th>
+                <th></th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for user in users %}
+            {% if user.is_authorized %}
+            <tr class="success" id={{ user.username }}>
+                <td>{{ user.username }}</td>
+                {% if ask_email %}<td>{{ user.email }}</td>{% endif %}
+                <td>{{ user.has_2fa }}</td>
+                <td>Sí</td>
+                <td><a class="btn btn-default" href="{{ base_url }}authorize/{{ user.username }}" role="button">Desautorizar</a></td>
+                <td><a class="btn btn-jupyter" href="{{ base_url }}change-password/{{ user.username }}" role="button">Cambiar Contraseña</a></td>
+                <td></td>
+            </tr>
+            {% else %}
+            <tr id={{ user.username }}>
+                <td>{{ user.username }}</td>
+                {% if ask_email %}<td>{{ user.email }}</td>{% endif %}
+                <td>{{ user.has_2fa }}</td>
+                <td>No</td>
+                <td><a class="btn btn-jupyter" href="{{ base_url }}authorize/{{ user.username }}" role="button">Authorize</a></td>
+                <td><a class="btn btn-jupyter" href="{{ base_url }}change-password/{{ user.username }}" role="button">Change password</a></td>
+                <td><a class="btn btn-jupyter" href="{{ base_url }}discard/{{ user.username }}" role="button">Discard</a></td>
+            </tr>
+            {% endif %}
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}
