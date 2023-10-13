@@ -34,9 +34,9 @@
                 {% if ask_email %}<td>{{ user.email }}</td>{% endif %}
                 <td>{{ user.has_2fa }}</td>
                 <td>No</td>
-                <td><a class="btn btn-jupyter" href="{{ base_url }}authorize/{{ user.username }}" role="button">Authorize</a></td>
-                <td><a class="btn btn-jupyter" href="{{ base_url }}change-password/{{ user.username }}" role="button">Change password</a></td>
-                <td><a class="btn btn-jupyter" href="{{ base_url }}discard/{{ user.username }}" role="button">Discard</a></td>
+                <td><a class="btn btn-jupyter" href="{{ base_url }}authorize/{{ user.username }}" role="button">Autorizar</a></td>
+                <td><a class="btn btn-jupyter" href="{{ base_url }}change-password/{{ user.username }}" role="button">Cambiar Contraseña</a></td>
+                <td><a class="btn btn-jupyter" href="{{ base_url }}discard/{{ user.username }}" role="button">Descartar</a></td>
             </tr>
             {% endif %}
             {% endfor %}
