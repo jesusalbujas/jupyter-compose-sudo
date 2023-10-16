@@ -3,37 +3,37 @@
 {% block main %}
 
 <div class="container pt-16">
-  <h1 class="sr-only">Manage Tokens</h1>
+  <h1 class="sr-only">Gestor de tokens</h1>
   <div class="row">
     <form id="request-token-form" class="col-md-offset-3 col-md-6">
       <div class="text-center">
         <button type="submit" class="btn btn-lg btn-jupyter">
-          Request new API token
+          Solicitar Token
         </button>
       </div>
       <div class="form-group">
-        <label for="token-note">Note</label>
+        <label for="token-note">Nota</label>
         <input
           id="token-note"
           class="form-control"
-          placeholder="note to identify your new token">
+          placeholder="nota para identificar tu token">
         <small id="note-note" class="form-text text-muted">
-          This note will help you keep track of what your tokens are for.
+          Esta nota le ayudará a realizar un seguimiento de su token.
         </small>
         <br><br>
-        <label for="token-expiration-seconds">Token expires</label>
+        <label for="token-expiration-seconds">El token caduca en:</label>
         {% block expiration_options %}
         <select id="token-expiration-seconds"
                 class="form-control">
           <!-- unit used for each value is `seconds` -->
-          <option value="3600">1 Hour</option>
-          <option value="86400">1 Day</option>
-          <option value="604800">1 Week</option>
-          <option value="" selected="selected">Never</option>
+          <option value="3600">1 Hora</option>
+          <option value="86400">1 Día</option>
+          <option value="604800">1 semana</option>
+          <option value="" selected="selected">Nunca</option>
         </select>
         {% endblock expiration_options %}
         <small id="note-expires-at" class="form-text text-muted">
-          You can configure when your token will be expired.
+          Puedes configurar cuándo caducará tu token.
         </small>
       </div>
     </form>
@@ -43,15 +43,15 @@
       <div id="token-area" class="col-md-6 col-md-offset-3" style="display: none;">
         <div class="panel panel-default">
           <div class="panel-heading">
-            Your new API Token
+            Tu nuevo token
           </div>
           <div class="panel-body">
             <p class="lead text-center">
               <span id="token-result"></span>
             </p>
             <p>
-              Copy this token. You won't be able to see it again,
-              but you can always come back here to get a new one.
+              ¡Aquí tienes un token secreto, como un regalo de Júpiter! 
+              No puedo mostrártelo de nuevo, pero vuelve cuando necesites uno nuevo. 🪐
             </p>
           </div>
         </div>
@@ -65,11 +65,11 @@
     <table class="table table-striped">
       <thead>
         <tr>
-          <th>Note</th>
-          <th>Last used</th>
-          <th>Created</th>
-          <th>Expires at</th>
-          <th>Action</th>
+          <th>Nota</th>
+          <th>Última vez usado</th>
+          <th>Creado</th>
+          <th>Expira en</th>
+          <th>Acción</th>
         </tr>
       </thead>
       <tbody>
@@ -81,7 +81,7 @@
             {%- if token.last_activity -%}
             {{ token.last_activity.isoformat() + 'Z' }}
             {%- else -%}
-            Never
+            Nunca
             {%- endif -%}
           </td>
           <td class="time-col col-sm-3">
@@ -95,11 +95,11 @@
             {%- if token.expires_at -%}
             {{ token.expires_at.isoformat() + 'Z' }}
             {%- else -%}
-            Never
+            Nunca
             {%- endif -%}
           </td>
           <td class="col-sm-1 text-center">
-            <button class="revoke-token-btn btn btn-xs btn-danger">revoke</button>
+            <button class="revoke-token-btn btn btn-xs btn-danger">Revocar</button>
           </td>
           {% endblock token_row %}
         </tr>
@@ -111,14 +111,14 @@
 
   {% if oauth_clients %}
   <div class="row">
-    <h2>Authorized Applications</h2>
+    <h2>Aplicaciones autorizadas</h2>
     <table class="table table-striped">
       <thead>
         <tr>
-          <th>Application</th>
-          <th>Last used</th>
-          <th>First authorized</th>
-          <th>Action</th>
+          <th>Aplicaciones</th>
+          <th>Última vez usado</th>
+          <th>Primer autorizado</th>
+          <th>Acción</th>
         </tr>
       </thead>
       <tbody>
@@ -131,7 +131,7 @@
             {%- if client['last_activity'] -%}
             {{ client['last_activity'].isoformat() + 'Z' }}
             {%- else -%}
-            Never
+            Nunca
             {%- endif -%}
           </td>
           <td class="time-col col-sm-3">
@@ -142,7 +142,7 @@
             {%- endif -%}
           </td>
           <td class="col-sm-1 text-center">
-            <button class="revoke-token-btn btn btn-xs btn-danger">revoke</button>
+            <button class="revoke-token-btn btn btn-xs btn-danger">Revocar</button>
           {% endblock client_row %}
         </tr>
         {% endfor %}

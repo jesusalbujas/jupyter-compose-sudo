@@ -13,7 +13,7 @@
   {% endblock %}
   <div class="row col-sm-offset-2 col-sm-8">
     {% if for_user and user.name != for_user.name -%}
-      <p>Spawning lab for {{ for_user.name }}</p>
+      <p>Generando laboratorio para {{ for_user.name }}</p>
     {% endif -%}
     {% if error_message -%}
       <p class="spawn-error-msg text-danger">
