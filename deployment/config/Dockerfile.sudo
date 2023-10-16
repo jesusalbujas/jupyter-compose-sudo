@@ -14,3 +14,5 @@ USER $NB_UID
 # Defines a working directory for the user
 WORKDIR /home/jovyan
 
+# Install jupyterlab-language-pack-es-ES
+RUN pip install jupyterlab-language-pack-es-ES
