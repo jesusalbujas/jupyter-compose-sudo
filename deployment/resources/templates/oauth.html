@@ -5,13 +5,13 @@
 
 {% block main %}
 <div class="container col-md-6 col-md-offset-3">
-    <h1 class="text-center">Authorize access</h1>
+    <h1 class="text-center">Autorizar el acceso</h1>
 
     <h2>
-        An application is requesting authorization to access data associated with your Research Labs account
+        Una aplicación solicita autorización para acceder a los datos asociados con su cuenta de ERP Labs
     </h2>
 
-    <h3>This will grant the application permission to:</h3>
+    <h3>Esto otorgará a la aplicación permiso para:</h3>
     <div>
         <form method="POST" action="">
             <input type="hidden" name="_xsrf" value="{{ xsrf }}"/>
@@ -23,19 +23,19 @@
             {% for scope_info in scope_descriptions %}
             <div class="checkbox input-group">
                 <label>
-                    <input type="checkbox" name="raw-scopes" checked="true" title="This authorization is required"
+                    <input type="checkbox" name="raw-scopes" checked="true" title="Esta autorización es requerida"
                            disabled="disabled"
                            {# disabled because it's required #} />
                     <span>
             {{ scope_info['description'] }}
             {% if scope_info['filter'] %}
-            Applies to {{ scope_info['filter'] }}.
+            Aplica a {{ scope_info['filter'] }}.
             {% endif %}
           </span>
                 </label>
             </div>
             {% endfor %}
-            <input type="submit" value="Authorize" class="form-control btn-jupyter"/>
+            <input type="submit" value="Autorizar" class="form-control btn-jupyter"/>
         </form>
     </div>
 </div>

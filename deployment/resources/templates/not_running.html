@@ -8,30 +8,30 @@
       {% block heading %}
       <h1>
       {% if failed %}
-      Spawn failed
+      Inicio fallido
       {% else %}
-      Lab not running
+      Lab no está funcionando
       {% endif %}
       </h1>
       {% endblock %}
       {% block message %}
       <p>
         {% if failed %}
-        The latest attempt to start your lab {{ server_name }} has failed.
+        El último intento para iniciar tu lab {{ server_name }} ha fallado.
         {% if failed_html_message %}
           </p><p>{{ failed_html_message | safe }}</p><p>
         {% elif failed_message %}
           </p><p>{{ failed_message }}</p><p>
         {% endif %}
-        Would you like to retry starting it?
+        ¿Quieres volver a intentar iniciarlo?
         {% else %}
-        Your lab {{ server_name }} is not running.
+        Tu lab {{ server_name }} no está funcionando.
           {% if implicit_spawn_seconds %}
-          It will be restarted automatically.
-          If you are not redirected in a few seconds,
-          click below to launch your lab.
+          Se reiniciará automáticamente.
+          Si no eres redirigido en unos segundos,
+          clic para lanzar tu lab.
           {% else %}
-          Would you like to start it?
+          ¿Te gustaria iniciar tu lab?
           {% endif %}
         {% endif %}
       </p>
@@ -39,9 +39,9 @@
       {% block start_button %}
       <a id="start" role="button" class="btn btn-lg btn-primary" href="{{ spawn_url }}">
         {% if failed %}
-        Relaunch
+        Relanzar
         {% else %}
-        Launch
+        Iniciar
         {% endif %}
         Lab {{ server_name }}
       </a>

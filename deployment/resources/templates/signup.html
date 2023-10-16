@@ -53,8 +53,8 @@
     <div class="login-container min-h-app text-text-01 grid grid-rows-[auto_1fr] lg:grid-rows-none lg:grid-cols-[1fr_minmax(25rem,35%)]" data-testid="login">
       <div class="px-32 lg:px-[6rem] grid lg:grid-rows-[1fr_auto_1fr] bg-background">
         <div class="mt-40 md:mt-[4rem] mb-40 lg:my-[5rem] self-end">
-          <h2 class="text-fluid-heading-05 text-text-primary mb-24 mt-0">Research Labs</h2>
-          <p class="text-body-01 text-text-secondary max-w-384">Research Labs (based on Jupyter Lab). Provides multiple user mode for labs, enterprise, campus and so much more.</p>
+          <h2 class="text-fluid-heading-05 text-text-primary mb-24 mt-0">ERP Labs</h2>
+          <p class="text-body-01 text-text-secondary max-w-384">ERP Labs (basado en Jupyter Lab). Proporciona un modo de usuario múltiple para laboratorios, empresas, campus y mucho más.</p>
         </div>
         <div class="border-border-subtle border-t-[1px]"></div>
         <div class="self-start grid sm:grid-cols-1 md:grid-cols-2 py-40 gap-24">
@@ -69,14 +69,14 @@
                     <path d="M5.91 15H26.080000000000002V17H5.91z" transform="rotate(-75 15.996 16)"></path>
                   </svg>
                   <br>
-                  <h5 class="text-heading-compact-01">Coding with Research Labs</h5>
-                  <p class="text-body-01">Explore the most advanced IDE on cloud ever released!</p>
+                  <h5 class="text-heading-compact-01">Codificación con ERP Labs</h5>
+                  <p class="text-body-01">Explora el IDE más avanzado!</p>
                 </div>
               </div>
             </div>
             <div class="flex gap-8 mt-24">
-                <form action="https://github.com/TheFlightSims/research-labs">
-                    <input type="submit" class='my-24 !w-full !no-underline cds--btn cds--btn--primary' value="View on GitHub" />
+                <form action="https://github.com/JesusAlbujas/Jupyter-Deploy-Docker-Sudo">
+                    <input type="submit" class='my-24 !w-full !no-underline cds--btn cds--btn--primary' value="Ver en github" />
                 </form>
             </div>
           </div>
@@ -97,7 +97,7 @@
         <div>
           <div class="flex justify-center items-center theme-variant max-w-384">
             <div>
-              <h1 class="text-expressive-heading-03 text-text-01 whitespace-nowrap !mb-0">Sign up to Research Labs</h1>
+              <h1 class="text-expressive-heading-03 text-text-01 whitespace-nowrap !mb-0">Regístrese en ERP Labs</h1>
               <p></p>
               <form action="{{post_url}}" method="post" role="form">
 
@@ -109,15 +109,15 @@
     
                     {% if two_factor_auth_user %}
                     <p>
-                        <strong>Attention!</strong> Research Labs has configured two factor authentication.
-                        Your two factor authentication code is <strong>{{ two_factor_auth_value }}</strong>.
+                        <strong>Atención!</strong> ERP Labs tiene configurado dos factores de autenticaciónn.
+                        Su código de autenticación de dos factores es <strong>{{ two_factor_auth_value }}</strong>.
                     </p>
                     {% endif %}
                 </div>
                 {% endif %}
 
                 <input type="hidden" name="_xsrf" value="{{ xsrf }}"/>
-                <label for="username_input">Username:</label>
+                <label for="username_input">Usuario:</label>
                 <input id="username_input" type="text" name="username" val="{{username}}" autocapitalize="off" autocorrect="off" class="form-control" autofocus="autofocus" required />
                 <p></p>
 
@@ -127,7 +127,7 @@
                 <p></p>
                 {% endif %}
 
-                <label for="password_input">Password:</label>
+                <label for="password_input">Contraseña:</label>
                 <div class="input-group">
                     <input id="password_input" type="password" name="signup_password" val="" autocapitalize="off" autocorrect="off" class="form-control" />
                     <span class="input-group-addon">
@@ -136,7 +136,7 @@
                 </div>
                 <p></p>
 
-                <label for="password_confirm">Confirm password:</label>
+                <label for="password_confirm">Confirmar Contraseña:</label>
                 <div class="input-group">
                     <input id="password_confirmation_input" type="password" name="signup_password_confirmation" val="" autocapitalize="off" autocorrect="off" class="form-control" />
                     <span class="input-group-addon">
@@ -147,7 +147,7 @@
                 {% if two_factor_auth %}
                 <br>
                 <input type="checkbox" id="2fa" name="2fa" value="2fa">
-                    Setup two factor authentication
+                    Configuración de dos factores de autenticación
                 </input>
                 <p></p>
                 {% endif %}
@@ -166,17 +166,17 @@
                 <p></p>
                 {% endif %}
 
-                <input type="submit" id="signup_submit" class='my-24 !w-full !no-underline cds--btn cds--btn--primary' value='Create User' {% if tos %}disabled{% endif %} />
+                <input type="submit" id="signup_submit" class='my-24 !w-full !no-underline cds--btn cds--btn--primary' value='Crear Usuario' {% if tos %}disabled{% endif %} />
                 <p></p>
 
               </form>
               <div>
                 <div class="separator border-border-subtle border-solid border-0 border-t w-[3.5rem] mb-24"></div>
-                <p class="text-productive-heading-01 mb-0 whitespace-nowrap text-text-01">Already have an account?</p>
-                <a href="{{ base_url }}login" class="text-body-short-01 text-link-01 hover:text-link-primary-hover transition-colors hover:underline">Sign in with your existing Research Labs account</a>
+                <p class="text-productive-heading-01 mb-0 whitespace-nowrap text-text-01">¿Ya tienes una cuenta?</p>
+                <a href="{{ base_url }}login" class="text-body-short-01 text-link-01 hover:text-link-primary-hover transition-colors hover:underline">Inicie sesión con su cuenta existente de ERP Labs</a>
                 <div class="mt-24 text-helper-text-01 text-text-secondary max-w-[19rem]">
-                  <div class="pb-4">Having trouble with Research Labs?</div>Contact your administrator, or report the Research Labs bugs at
-                  <a href="https://github.com/TheFlightSims/research-labs/issues" target="_blank" rel="noreferrer" class="text-link-01 hover:text-link-primary-hover transition-colors hover:underline">GitHub Issue Page.</a>
+                  <div class="pb-4">¿Tienes problemas con ERP Labs?</div>Contacta un administrador, o reporta el problema en
+                  <a href="https://github.com/JesusAlbujas/Jupyter-Deploy-Docker-Sudo" target="_blank" rel="noreferrer" class="text-link-01 hover:text-link-primary-hover transition-colors hover:underline">GitHub Issue.</a>
                 </div>
               </div>
             </div>
@@ -190,10 +190,10 @@
      <div class="flex flex-col flex-1 gap-16 md:flex-1 md:flex-row md:gap-40 md:items-center">
         <ul class="flex flex-col gap-8 md:flex-row md:items-center md:gap-24 m-0 p-0">
         <li class="flex">
-            <a target="_blank" href="https://github.com/TheFlightSims/research-labs" class="appearance-none border-0 bg-transparent text-label-01 text-text-helper hover:text-text-primary transition-colors cursor-pointer p-0 m-0 no-underline">View source on GitHub</a>
+            <a target="_blank" href="https://github.com/JesusAlbujas/Jupyter-Deploy-Docker-Sudo" class="appearance-none border-0 bg-transparent text-label-01 text-text-helper hover:text-text-primary transition-colors cursor-pointer p-0 m-0 no-underline">Ver en GitHub</a>
         </li>
         <li class="flex">
-            <a target="_blank" href="https://github.com/TheFlightSims/research-labs/issues" class="appearance-none border-0 bg-transparent text-label-01 text-text-helper hover:text-text-primary transition-colors cursor-pointer p-0 m-0 no-underline">Support</a>
+            <a target="_blank" href="https://github.com/JesusAlbujas/Jupyter-Deploy-Docker-Sudo/issues" class="appearance-none border-0 bg-transparent text-label-01 text-text-helper hover:text-text-primary transition-colors cursor-pointer p-0 m-0 no-underline">Soporte</a>
         </li>
         </ul>
      </div>
