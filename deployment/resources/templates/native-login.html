@@ -61,7 +61,7 @@
           </div>
           <div class="flex gap-8 mt-24">
               <form action="https://github.com/JesusAlbujas/Jupyter-Deploy-Docker-Sudo">
-                  <input type="submit" class='my-24 !w-full !no-underline cds--btn cds--btn--primary' value="Ver en github" />
+                  <input type="submit" class='my-24 !w-full !no-underline cds--btn cds--btn--primary' value="Ver en Github" />
               </form>
           </div>
         </div>
@@ -82,7 +82,7 @@
       <div>
         <div class="flex justify-center items-center theme-variant max-w-384">
           <div>
-            <h1 class="text-expressive-heading-03 text-text-01 whitespace-nowrap !mb-0">Iniciar sesión en ERP Labs</h1>
+            <h1 class="text-expressive-heading-03 text-text-01 whitespace-nowrap !mb-0">Sign in to Research Labs</h1>
             <br>
             <p></p>
             <form action="{{login_url}}?next={{next}}" method="post" role="form">
@@ -95,11 +95,11 @@
 
               <input type="hidden" name="_xsrf" value="{{ xsrf }}"/>
               <label for="username_input">Usuario</label>
-              <input id="username_input" type="text" name="Usuario" val="{{username}}" autocapitalize="off" autocorrect="off" class="form-control" autofocus="autofocus" required />
+              <input id="username_input" type="text" name="username" val="{{username}}" autocapitalize="off" autocorrect="off" class="form-control" autofocus="autofocus" required />
               <p></p>
               <label for='password_input'>Contraseña</label>
               <div class="input-group">
-                  <input id="password_input" type="password" name="Contraseña" val="" autocapitalize="off" autocorrect="off" class="form-control" />
+                  <input id="password_input" type="password" name="password" val="" autocapitalize="off" autocorrect="off" class="form-control" />
                   <span class="input-group-addon">
                       <button id="eye" type="button" style="border:0;">Mostrar</button>
                   </span>
@@ -107,10 +107,10 @@
               <p></p>
               {% if two_factor_auth %}
               <label for="2fa_input">Ingresar 2FA Code</label>
-              <input id="2fa_input" type="text" autocapitalize="off" autocorrect="off" class="form-control" name="2fa" placeholder="If you don't have 2FA, leave empty" />
+              <input id="2fa_input" type="text" autocapitalize="off" autocorrect="off" class="form-control" name="2fa" placeholder="Si no tienes 2FA, dejar vacío" />
               <p></p>
               {% endif %}
-              <input type="submit" id="login_submit" class='my-24 !w-full !no-underline cds--btn cds--btn--primary' value='Sign In' />
+              <input type="submit" id="login_submit" class='my-24 !w-full !no-underline cds--btn cds--btn--primary' value='Iniciar sesión' />
               <p></p>
             </form>
             <div>
