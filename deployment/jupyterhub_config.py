@@ -38,6 +38,8 @@ c.DockerSpawner.volumes = {"jupyterhub-user-{username}": notebook_dir}
 c.JupyterHub.default_url = "/hub/home"
 
 ## Templates
+c.JupyterHub.default_lang = 'es'  # Reemplaza 'es' con el código del idioma que desees (por ejemplo, 'en' para inglés).
+
 
 c.JupyterHub.template_paths = ['/usr/local/share/jupyterhub/templates']
 c.JupyterHub.template_paths = ['/usr/local/share/jupyterhub/static']
