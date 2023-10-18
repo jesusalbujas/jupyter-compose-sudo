@@ -9,11 +9,10 @@
   <div class="bg p-16 pb-24 md:p-32 grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-16 md:h-[186px] text-text-on-color" data-v-01dcd351="">
     <div class="name md:col-span-2 lg:col-span-3 flex flex-col justify-between sm:min-h-[100px]" data-v-01dcd351="">
       <div class="text-body-compact-01" data-v-01dcd351="">
-        <span>Bienvenido, {{user.name}}</span>
         {% if two_factor_auth %}
-          <span class="ml-8 text-purple-70 dark:text-purple-20 bg-purple-20 dark:bg-purple-70 px-8 py-2 rounded-xl"> 2FA Status: Habilitado </span>
+          <span class="ml-8 text-purple-70 dark:text-purple-20 bg-purple-20 dark:bg-purple-70 px-8 py-2 rounded-xl"> Bienvenido, {{user.name}} </span>
         {% else %}
-          <span class="ml-8 text-purple-70 dark:text-purple-20 bg-purple-20 dark:bg-purple-70 px-8 py-2 rounded-xl"> 2FA Status: Deshabilitado </span>
+          <span class="ml-8 text-purple-70 dark:text-purple-20 bg-purple-20 dark:bg-purple-70 px-8 py-2 rounded-xl"> Bienvenido, {{user.name}} </span>
         {% endif %}
       </div>
       <h1 class="font-300 text-32 md:text-36 lg:text-48 leading-[40px] md:leading-[44px] lg:leading-[56px] m-0" data-v-01dcd351=""> <img src="https://github.com/JesusAlbujas/Jupyter-Deploy-Docker-Sudo/assets/134967453/eafa8634-b10c-4362-b0cb-138ca282958c"> </h1>
