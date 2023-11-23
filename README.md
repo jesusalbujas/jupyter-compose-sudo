@@ -43,6 +43,17 @@ This deployment uses [JupyterHub Native Authenticator](https://native-authentica
    docker-compose build
    ```
 
+## Sudo enabled
+
+Sudo is enabled with a custom image in the dockerfile found in `config/`, this image is passed through Docker Compose so that every container created by the user has the ability to use sudo.
+
+1. Build image
+
+```bash
+docker build -t jupyter-sudo:latest -f Dockerfile.sudo .
+
+```
+
 ## Customization: Jupyter Notebook Image
 
 You can configure JupyterHub to spawn Notebook servers from any Docker image, as
@@ -78,7 +89,7 @@ Run the JupyterHub container on the host.
 To run the JupyterHub container in detached mode:
 
 ```bash
-docker-compose up -d
+docker compose up -d
 ```
 
 Once the container is running, you should be able to access the JupyterHub console at `http://localhost:8000`.
@@ -86,7 +97,7 @@ Once the container is running, you should be able to access the JupyterHub conso
 To bring down the JupyterHub container:
 
 ```bash
-docker-compose down
+docker compose down
 ```
 
 ---
@@ -153,15 +164,3 @@ In this deployment, the user's notebook directories (`/home/jovyan/work`) are ba
 
     [{jtyberg /var/lib/docker/volumes/jtyberg/_data /home/jovyan/work local rw true rprivate}]
 ```
-
-## Sudo enabled
-
-Sudo is enabled with a custom image in the dockerfile found in `config/`, this image is passed through Docker Compose so that every container created by the user has the ability to use sudo.
-
-1. Build image
-
-```bash
-docker build -t jupyter-sudo:latest -f Dockerfile.sudo .
-
-```
-
