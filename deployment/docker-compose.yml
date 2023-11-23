@@ -26,6 +26,8 @@ services:
       # Bind Docker volume on host for JupyterHub database and cookie secrets
       - "jupyterhub-data:/data"
       - "/deployment/data:/data"
+      - ./resources/static:/usr/local/share/jupyterhub/static:rw
+      - ./resources/templates:/usr/local/share/jupyterhub/templates:rw
     ports:
       #- "8000:8000"
       - "2023:8000"
@@ -42,8 +44,6 @@ services:
 volumes:
   jupyterhub-data:
   
-
-
 networks:
   jupyterhub-network:
     name: jupyterhub-network
