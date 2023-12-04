@@ -26,12 +26,13 @@ c.DockerSpawner.network_name = network_name
 # Most `jupyter/docker-stacks` *-notebook images run the Notebook server as
 # user `jovyan`, and set the notebook directory to `/home/jovyan/work`.
 # We follow the same convention.
-notebook_dir = os.environ.get("DOCKER_NOTEBOOK_DIR", "/home/jovyan/work")
+
+notebook_dir = os.environ.get("DOCKER_NOTEBOOK_DIR")
 c.DockerSpawner.notebook_dir = notebook_dir
 
-# Mount the real user's Docker volume on the host to the notebook user's
-# notebook directory in the container
-c.DockerSpawner.volumes = {"jupyterhub-user-{username}": notebook_dir}
+#Mount the real user's Docker volume on the host to the notebook user's notebook directory in the container
+#c.DockerSpawner.volumes = {"jupyterhub-user-{username}": notebook_dir}
+c.DockerSpawner.volumes = {"Jupyter-Deploy-Docker-Sudo/jupyterhub-volumes/jupyterhub-user-{username}": notebook_dir}
 
 ## Default URL
 
