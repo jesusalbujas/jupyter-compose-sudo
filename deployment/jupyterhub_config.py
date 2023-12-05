@@ -27,12 +27,12 @@ c.DockerSpawner.network_name = network_name
 # user `jovyan`, and set the notebook directory to `/home/jovyan/work`.
 # We follow the same convention.
 
-notebook_dir = os.environ.get("DOCKER_NOTEBOOK_DIR")
+notebook_dir = os.environ.get("DOCKER_NOTEBOOK_DIR", "/home/jupyter/work")
 c.DockerSpawner.notebook_dir = notebook_dir
 
-#Mount the real user's Docker volume on the host to the notebook user's notebook directory in the container
+# Montar los volumenes de cada usuario en la máquina local, puedes cambiar /home por otra ruta (solo acepta rutas absolutas)
 #c.DockerSpawner.volumes = {"jupyterhub-user-{username}": notebook_dir}
-c.DockerSpawner.volumes = {"Jupyter-Deploy-Docker-Sudo/jupyterhub-volumes/jupyterhub-user-{username}": notebook_dir}
+c.DockerSpawner.volumes = {"/home/jupyterhub-volumes/jupyterhub-user-{username}": notebook_dir}
 
 ## Default URL
 
