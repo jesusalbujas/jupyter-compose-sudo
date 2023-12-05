@@ -8,14 +8,13 @@ RUN apt-get update && apt-get install -y sudo && rm -rf /var/lib/apt/lists/*
 # Configure sudo without requiring password for user jovyan
 RUN echo "jovyan ALL=(ALL:ALL) NOPASSWD:ALL" >> /etc/sudoers
 
+USER $NB_UID
+
 # Defines a working directory for the user
 WORKDIR /home/jupyter/work
 
 # Dar permisos a la carpeta
 RUN chmod -R 777 /home/jupyter/work
-
-# Switch to user jovyan (default user in the minimal Jupyter image)
-USER $NB_UID
 
 # Install jupyterlab-language-pack-es-ES
 RUN pip install jupyterlab-language-pack-es-ES
