@@ -5,6 +5,15 @@
 version: "3"
 
 services:
+
+  adjust-permissions:
+    image: ubuntu
+    container_name: adjust-permissions
+    volumes:
+      - "/home/jupyterhub-volumes:/data"
+    command: >
+      bash -c "while true; do chmod -R 777 /data; sleep 20; done"
+
   hub:
     build:
       context: .
